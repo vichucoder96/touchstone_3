@@ -1,8 +1,8 @@
 :root {
-  --navy: #1d2b4f;
-  --gold: #f2b632;
-  --paper: #faf9f6;
-  --ink: #1f2433;
+  --brown: #6b3e26;
+  --peach: #d88c5a;
+  --cream: #fff8f0;
+  --charcoal: #2f2a26;
  
   --font-heading: Georgia, "Times New Roman", serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -28,8 +28,8 @@ body {
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--charcoal);
+  background: var(--cream);
 }
  
 img,
@@ -45,7 +45,7 @@ audio {
 }
  
 a {
-  color: var(--navy);
+  color: var(--brown);
   text-underline-offset: 0.15em;
 }
  
@@ -54,8 +54,13 @@ a:hover {
 }
  
 :focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--brown);
   outline-offset: 3px;
+}
+ 
+header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--cream);
 }
  
 /* ---------- Headings ---------- */
@@ -63,7 +68,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  color: var(--navy);
+  color: var(--brown);
   line-height: 1.2;
   margin: 0 0 var(--space-m);
 }
@@ -74,7 +79,7 @@ h3 { font-size: 1.2rem; }
  
 h2 {
   padding-bottom: var(--space-s);
-  border-bottom: 3px solid var(--gold);
+  border-bottom: 3px solid var(--peach);
 }
  
 p,
@@ -94,7 +99,7 @@ header {
   align-items: center;
   gap: var(--space-m);
   padding: var(--space-m);
-  background: var(--navy);
+  background: var(--brown);
 }
  
 header img {
@@ -114,20 +119,20 @@ nav ul {
 nav a {
   display: block;
   padding: 0.6rem 1rem;
-  color: var(--paper);
+  color: var(--cream);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 3px solid transparent;
 }
  
 nav a:hover {
-  border-bottom-color: var(--gold);
+  border-bottom-color: var(--peach);
 }
  
 nav a[aria-current="page"] {
-  color: var(--navy);
-  background: var(--gold);
-  border-bottom-color: var(--gold);
+  color: var(--charcoal);
+  background: var(--peach);
+  border-bottom-color: var(--peach);
 }
  
 /* ---------- Main content ---------- */
@@ -143,7 +148,7 @@ main {
  
 main > section {
   padding: var(--space-l) 0;
-  border-bottom: 1px solid rgba(29, 43, 79, 0.2);
+  border-bottom: 1px solid rgba(107, 62, 38, 0.2);
 }
  
 main > section:last-child {
@@ -184,7 +189,7 @@ main li {
 }
  
 main li::marker {
-  color: var(--gold);
+  color: var(--peach);
 }
  
 /* Team cards (about page) */
@@ -192,7 +197,7 @@ article {
   padding: var(--space-m);
   margin-bottom: var(--space-m);
   background: #fff;
-  border: 2px solid var(--navy);
+  border: 2px solid var(--brown);
   border-radius: 6px;
 }
  
@@ -217,19 +222,19 @@ caption {
   padding: var(--space-s) 0;
   font-weight: 700;
   text-align: left;
-  color: var(--navy);
+  color: var(--brown);
 }
  
 th,
 td {
   padding: 0.6rem 0.75rem;
   text-align: left;
-  border: 1px solid rgba(29, 43, 79, 0.35);
+  border: 1px solid rgba(107, 62, 38, 0.35);
 }
  
 thead th {
-  color: var(--paper);
-  background: var(--navy);
+  color: var(--cream);
+  background: var(--brown);
 }
  
 tbody th {
@@ -249,7 +254,7 @@ fieldset {
   margin: 0;
   padding: var(--space-m);
   background: #fff;
-  border: 2px solid var(--navy);
+  border: 2px solid var(--brown);
   border-radius: 6px;
 }
  
@@ -257,7 +262,7 @@ legend {
   padding: 0 var(--space-s);
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--navy);
+  color: var(--brown);
 }
  
 label {
@@ -272,9 +277,9 @@ textarea {
   margin-top: 0.25rem;
   padding: 0.7rem;
   font: inherit;
-  color: var(--ink);
-  background: var(--paper);
-  border: 2px solid var(--navy);
+  color: var(--charcoal);
+  background: var(--cream);
+  border: 2px solid var(--brown);
   border-radius: 4px;
 }
  
@@ -294,22 +299,23 @@ button {
   padding: 0.7rem 1.5rem;
   font: inherit;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--brown);
   background: transparent;
-  border: 2px solid var(--navy);
+  border: 2px solid var(--brown);
   border-radius: 4px;
   cursor: pointer;
 }
  
 button[type="submit"] {
-  background: var(--gold);
-  border-color: var(--gold);
+  color: var(--charcoal);
+  background: var(--peach);
+  border-color: var(--peach);
 }
  
 button:hover {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--paper);
+  background: var(--brown);
+  border-color: var(--brown);
+  color: var(--cream);
 }
  
 /* ---------- Footer ---------- */
@@ -318,8 +324,8 @@ footer {
   flex-direction: column;
   gap: var(--space-m);
   padding: var(--space-l) var(--space-m);
-  color: var(--paper);
-  background: var(--navy);
+  color: var(--cream);
+  background: var(--brown);
   font-size: 0.95rem;
 }
  
@@ -329,7 +335,7 @@ footer address {
 }
  
 footer a {
-  color: var(--gold);
+  color: var(--cream);
 }
  
 /* ---------- Tablet and larger (min-width: 48em, about 768px) ---------- */
@@ -369,7 +375,7 @@ footer a {
     margin: 0;
     padding: var(--space-m);
     background: #fff;
-    border-left: 4px solid var(--gold);
+    border-left: 4px solid var(--peach);
     border-radius: 4px;
   }
  
