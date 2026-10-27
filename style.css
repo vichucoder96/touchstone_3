@@ -1,3 +1,4 @@
+
 :root {
   --brown: #6b3e26;
   --peach: #d88c5a;
@@ -421,5 +422,131 @@ footer a {
   * {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+ 
+/* ==========================================================
+   Touchstone 4: interactive features (saved items + form feedback)
+   Uses only the four palette colors. Mobile-first.
+   ========================================================== */
+ 
+[hidden] {
+  display: none !important;
+}
+ 
+/* ---------- Saved items panel (products page) ---------- */
+.saved-panel {
+  padding: var(--space-m);
+  margin-top: var(--space-m);
+  background: #fff;
+  border: 2px solid var(--brown);
+  border-radius: 6px;
+}
+ 
+#saved-status {
+  font-weight: 600;
+}
+ 
+.saved-list {
+  padding: 0;
+  list-style: none;
+}
+ 
+.saved-list:empty {
+  display: none;
+}
+ 
+.saved-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  margin-bottom: var(--space-s);
+  background: var(--cream);
+  border-left: 4px solid var(--peach);
+  border-radius: 4px;
+}
+ 
+.saved-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+  margin-bottom: 0;
+}
+ 
+.save-btn {
+  display: block;
+  margin-top: var(--space-s);
+}
+ 
+button[aria-pressed="true"] {
+  color: var(--charcoal);
+  background: var(--peach);
+  border-color: var(--peach);
+}
+ 
+button[aria-pressed="true"]:hover {
+  color: var(--cream);
+  background: var(--brown);
+  border-color: var(--brown);
+}
+ 
+.button-link {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  text-decoration: none;
+  background: var(--peach);
+  border: 2px solid var(--peach);
+  border-radius: 4px;
+}
+ 
+.button-link:hover {
+  color: var(--cream);
+  background: var(--brown);
+  border-color: var(--brown);
+}
+ 
+/* ---------- Form feedback (contact page) ---------- */
+.error-message:not(:empty) {
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cream);
+  background: var(--brown);
+  border-radius: 4px;
+}
+ 
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  box-shadow: 0 0 0 3px var(--peach);
+}
+ 
+.field-note {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+ 
+.form-status:not(:empty) {
+  margin: 0;
+  padding: var(--space-s) var(--space-m);
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--peach);
+  border-radius: 4px;
+}
+ 
+@media (min-width: 48em) {
+  .saved-list li {
+    flex: 1 1 100%;
   }
 }
