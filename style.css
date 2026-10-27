@@ -1,0 +1,419 @@
+:root {
+  --navy: #1d2b4f;
+  --gold: #f2b632;
+  --paper: #faf9f6;
+  --ink: #1f2433;
+ 
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+ 
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+}
+ 
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+ 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+ 
+audio {
+  width: 100%;
+  max-width: 32rem;
+}
+ 
+a {
+  color: var(--navy);
+  text-underline-offset: 0.15em;
+}
+ 
+a:hover {
+  text-decoration-thickness: 0.2em;
+}
+ 
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+ 
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 var(--space-m);
+}
+ 
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+ 
+h2 {
+  padding-bottom: var(--space-s);
+  border-bottom: 3px solid var(--gold);
+}
+ 
+p,
+ul,
+address {
+  margin: 0 0 var(--space-m);
+}
+ 
+address {
+  font-style: normal;
+}
+ 
+/* ---------- Header and navigation ---------- */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  background: var(--navy);
+}
+ 
+header img {
+  width: 110px;
+}
+ 
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-s);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+nav a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+ 
+nav a:hover {
+  border-bottom-color: var(--gold);
+}
+ 
+nav a[aria-current="page"] {
+  color: var(--navy);
+  background: var(--gold);
+  border-bottom-color: var(--gold);
+}
+ 
+/* ---------- Main content ---------- */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--space-m);
+}
+ 
+main > section {
+  padding: var(--space-l) 0;
+  border-bottom: 1px solid rgba(29, 43, 79, 0.2);
+}
+ 
+main > section:last-child {
+  border-bottom: 0;
+}
+ 
+main > section > img,
+main > section > figure,
+main > section > picture,
+main > section > video {
+  margin-bottom: var(--space-m);
+}
+ 
+main > section > img,
+picture img,
+figure img,
+video {
+  border-radius: 6px;
+}
+ 
+figure {
+  margin: 0 0 var(--space-m);
+}
+ 
+figcaption {
+  margin-top: var(--space-s);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+ 
+/* Bulleted lists: product and feature lists */
+main ul {
+  padding-left: 1.25rem;
+}
+ 
+main li {
+  margin-bottom: var(--space-s);
+}
+ 
+main li::marker {
+  color: var(--gold);
+}
+ 
+/* Team cards (about page) */
+article {
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+}
+ 
+article h3 {
+  margin-bottom: var(--space-s);
+}
+ 
+article p {
+  margin-bottom: 0;
+}
+ 
+/* ---------- Hours table ---------- */
+table {
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: var(--space-m);
+  border-collapse: collapse;
+  background: #fff;
+}
+ 
+caption {
+  padding: var(--space-s) 0;
+  font-weight: 700;
+  text-align: left;
+  color: var(--navy);
+}
+ 
+th,
+td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border: 1px solid rgba(29, 43, 79, 0.35);
+}
+ 
+thead th {
+  color: var(--paper);
+  background: var(--navy);
+}
+ 
+tbody th {
+  font-weight: 600;
+}
+ 
+/* ---------- Form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  max-width: 36rem;
+}
+ 
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-m);
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+}
+ 
+legend {
+  padding: 0 var(--space-s);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--navy);
+}
+ 
+label {
+  font-weight: 600;
+}
+ 
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.7rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+}
+ 
+textarea {
+  resize: vertical;
+}
+ 
+form > p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: 0;
+}
+ 
+button {
+  min-height: 44px;
+  padding: 0.7rem 1.5rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--navy);
+  background: transparent;
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
+button[type="submit"] {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+ 
+button:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--paper);
+}
+ 
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: var(--space-l) var(--space-m);
+  color: var(--paper);
+  background: var(--navy);
+  font-size: 0.95rem;
+}
+ 
+footer p,
+footer address {
+  margin: 0;
+}
+ 
+footer a {
+  color: var(--gold);
+}
+ 
+/* ---------- Tablet and larger (min-width: 48em, about 768px) ---------- */
+@media (min-width: 48em) {
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 1.75rem; }
+ 
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-m) var(--space-l);
+  }
+ 
+  header img {
+    width: 140px;
+  }
+ 
+  nav ul {
+    justify-content: flex-end;
+  }
+ 
+  main {
+    padding: var(--space-m) var(--space-l);
+  }
+ 
+  /* Product and feature lists become a row of cards */
+  main section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    padding: 0;
+    list-style: none;
+  }
+ 
+  main section li {
+    flex: 1 1 14rem;
+    margin: 0;
+    padding: var(--space-m);
+    background: #fff;
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+  }
+ 
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--space-l);
+  }
+}
+ 
+/* Team section: heading on its own row, cards side by side */
+@media (min-width: 48em) {
+  main > section[aria-labelledby="staff-heading"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+  }
+ 
+  main > section[aria-labelledby="staff-heading"] h2 {
+    flex: 0 0 100%;
+  }
+ 
+  main > section[aria-labelledby="staff-heading"] article {
+    flex: 1 1 14rem;
+    margin: 0;
+  }
+}
+ 
+/* ---------- Desktop (min-width: 64em, about 1024px) ---------- */
+@media (min-width: 64em) {
+  main {
+    padding: var(--space-l) var(--space-xl);
+  }
+ 
+  main > section {
+    padding: var(--space-xl) 0;
+  }
+}
+ 
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
